@@ -1,2 +1,5 @@
 // stylelint-disable no-empty-source
 // @include font-face("../fonts/FontName/FontName", "FontName", 400, normal);
+
+@include font-face("../fonts/SF Pro Display/SFProDisplay-Regular", "SF Pro Display", 400, normal);
+@include font-face("../fonts/SF Pro Display/SFProDisplay-Bold", "SF Pro Display", 700, normal);
