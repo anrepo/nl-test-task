@@ -38,7 +38,40 @@
 		}
 	}
 
+	#about {
+		display: grid;
+		grid-template-areas: 	"logo empty"
+								"desc contacts";
+		grid-template-columns: 3fr 1fr;
+		grid-template-rows: min(150px);
+
+		
+		.description {
+			max-width: 675px;
+		}
+
+		.comunication {
+			display: flex;
+			justify-content: center;
+			flex-grow: 1;
+
+			.mail,
+			.tel,
+			address {
+				display: block;
+				font-size: 14px;
+				line-height: 20px;
+				color: $color-black;
+				margin-bottom: 10px;
+			}
+		}
+	}
+
 	@include desktop {
-		padding: 100px 0;
+		padding: 100px 20px;
+	}
+
+	@include mobile {
+		padding: 20px;
 	}
 }
