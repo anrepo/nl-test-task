@@ -38,31 +38,75 @@
 		}
 	}
 
+	// Section "About"
+
 	#about {
 		display: grid;
-		grid-template-areas: 	"logo empty"
-								"desc contacts";
+		grid-template: min(150px);
+		grid-template-areas:
+			"logo empty"
+			"desc contacts";
 		grid-template-columns: 3fr 1fr;
-		grid-template-rows: min(150px);
 
-		
 		.description {
 			max-width: 675px;
 		}
 
-		.comunication {
+		@include mobile {
 			display: flex;
-			justify-content: center;
-			flex-grow: 1;
+			flex-direction: column;
+			margin-bottom: 40px;
+		}
+	}
 
-			.mail,
-			.tel,
-			address {
+	.comunication {
+		display: flex;
+		flex-grow: 1;
+		justify-content: center;
+
+		.mail,
+		.tel,
+		address {
+			display: block;
+			margin-bottom: 10px;
+			font-size: 14px;
+			line-height: 20px;
+			color: $color-black;
+		}
+
+		@include mobile {
+			justify-content: flex-start;
+			margin-top: 20px;
+		}
+	}
+
+	.social {
+		display: flex;
+		margin-top: 15px;
+
+		a.social-link {
+			&:not(:first-child) {
+				margin-left: 20px;
+			}
+		}
+
+		svg {
+			width: 25px;
+			height: 25px;
+		}
+	}
+
+	// Section "Experience"
+
+	#experience {
+		.work-item {
+			&:not(:last-child) {
+				margin-bottom: 60px;
+			}
+
+			.links a {
 				display: block;
-				font-size: 14px;
-				line-height: 20px;
-				color: $color-black;
-				margin-bottom: 10px;
+				text-decoration: underline;
 			}
 		}
 	}

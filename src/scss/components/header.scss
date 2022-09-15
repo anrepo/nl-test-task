@@ -1,22 +1,21 @@
 .header {
 	position: fixed;
-	right: 0;
+	right: 20px;
 	top: 100px;
 	z-index: 2100;
 	display: flex;
 	align-items: center;
-	padding: 0 20px;
-	// background-color: $color-white;
 	background-color: transparent;
+
+	// background-color: $color-white;
 
 	&__menu {
 		position: relative;
 		display: flex;
 		justify-content: flex-end;
-
-		font-family: 'SF Pro Display';
-		font-style: normal;
+		font-family: "SF Pro Display";
 		font-weight: 700;
+		font-style: normal;
 		font-size: 18px;
 		line-height: 21px;
 	}
@@ -102,7 +101,7 @@
 				color: $color-black;
 			}
 		}
-	
+
 		&__burger {
 			z-index: 100;
 			flex-direction: column;
@@ -110,7 +109,7 @@
 			margin-left: auto;
 			width: 39px;
 			color: $color-black;
-	
+
 			span {
 				display: block;
 				margin: 6.5px 0;
@@ -119,13 +118,13 @@
 				background-color: currentColor;
 				transition: $duration-normal;
 			}
-	
+
 			@include active {
 				span {
 					&:first-child {
 						transform: translate(0, 8px) rotate(-45deg);
 					}
-	
+
 					&:last-child {
 						transform: translate(0, -6px) rotate(45deg);
 					}

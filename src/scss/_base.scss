@@ -10,6 +10,7 @@ html {
 	min-height: 100vh;
 	box-sizing: border-box;
 	font-family: $font-primary;
+	font-size: 14px;
 	scroll-behavior: smooth;
 
 	&.has-cursor,
@@ -36,6 +37,10 @@ main {
 	flex: 1;
 }
 
+h2 {
+	font-size: 1.43em;
+}
+
 p {
 	margin: 0;
 }
@@ -50,6 +55,11 @@ button {
 a {
 	text-decoration: none;
 	color: $color-link;
+	transition: all 0.2s;
+
+	&:hover {
+		opacity: 0.5;
+	}
 }
 
 svg {
@@ -63,9 +73,9 @@ svg {
 figure,
 picture {
 	display: inline-block;
+	vertical-align: middle;
 	margin: 0;
 	line-height: 0;
-	vertical-align: middle;
 
 	img {
 		width: 100%;
@@ -148,7 +158,6 @@ iframe {
 	min-height: 100vh; // fallback
 	// stylelint-disable-next-line
 	min-height: var(--vh - 1px);
-	// padding: 20px;
 }
 
 /* stylelint-disable */
