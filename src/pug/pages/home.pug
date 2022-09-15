@@ -37,108 +37,95 @@ main.home
 			+lazyPicture({
 				src: `${baseDir}images/Logo.svg`,
 				alt: 'Логотип',
-}).logo
-	div
+			}).logo
 
-	div
-		h1
-			| Андрей,
-			br
-			| Желаемая позиция
+		div
 
-		p.description
-			| Как разработчик, я высоко ценю способность воплотить видение дизайнера в жизнь,
-			| что считаю очень полезным для бизнеса. Я получаю огромное удовлетворение,
-			| наблюдая за работой от идеи до дизайна, особенно когда она появляется в руках
-			| пользователя. Я считаю, что ориентированные на пользователя решения являются
-			| наиболее ценными цифровыми ресурсами будущего.
+		div
+			h1
+				| Андрей,
+				br
+				| Front-end разработчик
 
-	.comunication
-		.contacts
-			a.mail(href="mailto:andrey.polenok@gmail.com") andrey.polenok@gmail.com
+			p.description
+				| Как разработчик, я высоко ценю способность воплотить видение дизайнера в жизнь,
+				| что считаю очень полезным для бизнеса. Я получаю огромное удовлетворение,
+				| наблюдая за работой от идеи до дизайна, особенно когда она появляется в руках
+				| пользователя. Я считаю, что ориентированные на пользователя решения являются
+				| наиболее ценными цифровыми ресурсами будущего.
 
-			a.tel(href="tel:+79152068407") +7(915)206-84-07
+		.comunication
+			.contacts
+				a.mail(href="mailto:andrey.polenok@gmail.com") andrey.polenok@gmail.com
 
-			address г. Москва
+				a.tel(href="tel:+79152068407") +7(915)206-84-07
 
-			.social
-				a.social-link(href="https://facebook.com" target="_blank")
-					+svg("fb")
-				a.social-link(href="https://vk.com" target="_blank")
-					+svg("vk")
-				a.social-link(href="https://t.me" target="_blank")
-					+svg("tg")
+				address г. Москва
+
+				.social
+					a.social-link(href="https://facebook.com" target="_blank")
+						+svg("fb")
+					a.social-link(href="https://vk.com" target="_blank")
+						+svg("vk")
+					a.social-link(href="https://t.me" target="_blank")
+						+svg("tg")
 
 	section#experience
 		h2 Опыт работы
 
-		.work-list
-			each work in homepage.worklist
-				.work-item
+		.job-list
+			each item in homepage.experience
+				.job-item
 					.date
-						!= work.date
-					.title
-						!= work.title
-					.company-name
-						!= work.companyName
-					.company-desc
-						!= work.companyDesc
+						!= item.date
+					.job-head
+						span.title
+							!= item.title
+						if item.icon.url
+							img.icon(src=item.icon.url alt=item.icon.alt)
+					.company
+						if item.company.logo
+							.logo
+								img(src=item.company.logo alt=item.company.logo.alt)
+						div
+							.name
+								!= item.company.name
+							.description
+								!= item.company.description
 					.description
-						!= work.description
+						!= item.description
 					.links
-						each link in work.links
+						each link in item.links
 							a(href=link.url)
 								!= link.text
 
-			//- .work-item
-			//- 	.date
-			//- 		| Июль 2019
-			//- 	.title
-			//- 		| Freelance Designer
-			//- 	.company-name
-			//- 		| Netherlands, Worldwide
-			//- 	.description
-			//- 		| Available for a project or job in UX/UI, Visual and Product design.
-			//- 	.links
-			//- 		a(href="#")
-			//- 			| Commercial tryouts
-			//- 		a(href="#")
-			//- 			| Personal projects
+		.fling-guy-box
+			img.guy(src="/images/guy.png" alt="Flying guy")
 
-			//- .work-item
-			//- 	.date
-			//- 		| Январь 2017 - Сентябрь 2018
-			//- 	.title
-			//- 		| Digital Designer
-			//- 	.company-name
-			//- 		| J Creative Solutions
-			//- 	.company-desc
-			//- 		| Digital agency in Minsk, Belarus
-			//- 	.description
-			//- 		| Created visuals for digital marketing channels such as social media,
-			//- 		| promo web and online ads. Developed visual language from scratch or
-			//- 		| following the branding guidelines. Designed presentationsfor clients
-			//- 		| and indoor purposes.
-			//- 	.links
-			//- 		a(href="#")
-			//- 			| Agency projects
+	section#education
+		h2 Образование
 
-			//- .work-item
-			//- 	.date
-			//- 		| Март 2014 - Февраль 2017
-			//- 	.title
-			//- 		| SEO Specialist → Lead SEO Specialist
-			//- 	.company-name
-			//- 		| OZ.by
-			//- 	.company-desc
-			//- 		| Online bookstore in Minsk, Belarus
-			//- 	.description
-			//- 		| Improved website performance and user experience of the biggest online
-			//- 		| bookstore OZ in Belarus, being a part of the marketing team,
-			//- 		br
-			//- 		| I interpreted Google Analytics data to IT, content and marketing colleagues.
-			//- 		| Advised on tech and content optimization strategy, automated processes,
-			//- 		| provided reports, increased organic traffic up to 150%.
-			//- 	.links
-			//- 		a(href="#")
-			//- 			| Annual company report 2016
+		.places-list
+			each item in homepage.education
+				.places-item
+					+svg(item.icon).icon
+					.title
+						!= item.title
+					.description
+						!= item.description
+
+	section#skills
+		h2 Навыки
+
+		.skills-list
+			each item in homepage.skills
+				.item
+					.title
+						!= item.title
+					.description
+						!= item.description
+
+	+lazyPicture({
+		src: `${baseDir}images/arms.png`,
+		alt: 'Heart arms',
+	}).logo

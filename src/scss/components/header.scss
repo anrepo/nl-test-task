@@ -32,6 +32,7 @@
 @include mobile {
 	.header {
 		left: 0;
+		top: 30px;
 
 		&__menu {
 			position: fixed;

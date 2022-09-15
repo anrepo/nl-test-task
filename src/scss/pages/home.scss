@@ -69,7 +69,6 @@
 		address {
 			display: block;
 			margin-bottom: 10px;
-			font-size: 14px;
 			line-height: 20px;
 			color: $color-black;
 		}
@@ -99,7 +98,13 @@
 	// Section "Experience"
 
 	#experience {
-		.work-item {
+		.job-list {
+			@include mobile {
+				margin-bottom: 40px;
+			}
+		}
+
+		.job-item {
 			&:not(:last-child) {
 				margin-bottom: 60px;
 			}
@@ -109,6 +114,93 @@
 				text-decoration: underline;
 			}
 		}
+
+		.date {
+			margin-bottom: 8px;
+			line-height: 17px;
+			color: $color-gray;
+		}
+
+		.job-head {
+			margin-bottom: 8px;
+
+			.title {
+				margin-bottom: 8px;
+				font-weight: 700;
+				line-height: 17px;
+			}
+
+			.icon {
+				margin-left: 8px;
+			}
+		}
+
+		.company {
+			display: flex;
+			margin-bottom: 8px;
+
+			.logo {
+				display: flex;
+				align-items: center;
+
+				img {
+					margin-right: 8px;
+				}
+			}
+
+			.name,
+			.description {
+				line-height: 17px;
+			}
+		}
+
+		.description {
+			margin-bottom: 4px;
+			line-height: 20px;
+		}
+
+		.links {
+			line-height: 17px;
+
+			a:not(:last-child) {
+				margin-bottom: 3px;
+			}
+		}
+	}
+
+	.fling-guy-box {
+		display: flex;
+		justify-content: center;
+
+		.guy {
+			@include mobile {
+				margin-bottom: 40px;
+			}
+		}
+	}
+
+	// Section "Education"
+
+	#education {
+		h2 {
+			margin-bottom: 16px;
+		}
+
+		.places-item {
+			.icon {
+				height: 30px;
+			}
+		}
+	}
+
+	// Section "Skills"
+
+	section#skills {
+		margin-bottom: 40px;
+	}
+
+	.arms {
+		margin-bottom: 40px;
 	}
 
 	@include desktop {

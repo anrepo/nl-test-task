@@ -1,14 +1,15 @@
 // stylelint-disable scss/dollar-variable-empty-line-before
 
 // COLORS
-$color-black: #282A33;
+$color-black: #282a33;
 $color-white: #fff;
 $color-gray: #828282;
-$color-link: #2F80ED;
+$color-link: #2f80ed;
 
 // FONTS
 // stylelint-disable-next-line
 $font-primary: -apple-system, blinkmacsystemfont, "Segoe UI", roboto, oxygen, ubuntu, cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+$font-secondary: "SF Pro Display";
 
 // EASING TRANSITIONS
 $duration-normal: 0.4s;
