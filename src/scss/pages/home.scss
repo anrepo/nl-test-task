@@ -186,9 +186,37 @@
 			margin-bottom: 16px;
 		}
 
+		.places-list {
+			display: grid;
+			grid-column-gap: 20px;
+			grid-template-columns: 1fr;
+
+			@include mobile {
+				grid-template-columns: 1fr 1fr;
+			}
+		}
+
 		.places-item {
+			margin-bottom: 20px;
+			text-align: center;
+
 			.icon {
-				height: 30px;
+				height: 42px;
+			}
+
+			.title {
+				font-weight: 700;
+			}
+
+			.title,
+			.description {
+				line-height: 20px;
+			}
+
+			.icon,
+			.title,
+			.description p:not(:last-child) {
+				margin-bottom: 5px;
 			}
 		}
 	}

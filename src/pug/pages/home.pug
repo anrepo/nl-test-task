@@ -108,7 +108,8 @@ main.home
 		.places-list
 			each item in homepage.education
 				.places-item
-					+svg(item.icon).icon
+					if item.icon.url
+						img.icon(src=item.icon.url alt=item.icon.alt)
 					.title
 						!= item.title
 					.description
