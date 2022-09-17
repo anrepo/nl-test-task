@@ -56,11 +56,11 @@ main.home
 
 		.comunication
 			.contacts
-				a.mail(href="mailto:andrey.polenok@gmail.com") andrey.polenok@gmail.com
+				a.mail(href="mailto:andrey.polenok@gmail.com") mail@gmail.com
 
-				a.tel(href="tel:+79152068407") +7(915)206-84-07
+				a.tel(href="tel:+79152068407") +7 (999) 000-00-00
 
-				address г. Москва
+				address г. Иннополис
 
 				.social
 					a.social-link(href="https://facebook.com" target="_blank")
@@ -69,6 +69,8 @@ main.home
 						+svg("vk")
 					a.social-link(href="https://t.me" target="_blank")
 						+svg("tg")
+
+	.top-wave-separator
 
 	section#experience
 		h2 Опыт работы
@@ -85,19 +87,20 @@ main.home
 							img.icon(src=item.icon.url alt=item.icon.alt)
 					.company
 						if item.company.logo
-							.logo
-								img(src=item.company.logo alt=item.company.logo.alt)
-						div
-							.name
-								!= item.company.name
-							.description
+							img(src=item.company.logo alt=item.company.logo.alt)
+						.info
+							if item.company.name
+								span.name
+									!= item.company.name
+							span.description
 								!= item.company.description
 					.description
 						!= item.description
 					.links
 						each link in item.links
-							a(href=link.url)
-								!= link.text
+							div
+								a(href=link.url)
+									!= link.text
 
 		.fling-guy-box
 			img.guy(src="/images/guy.png" alt="Flying guy")
@@ -120,7 +123,7 @@ main.home
 
 		.skills-list
 			each item in homepage.skills
-				.item
+				.skills-item
 					.title
 						!= item.title
 					.description
