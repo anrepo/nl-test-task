@@ -1,6 +1,4 @@
 .home {
-	padding: 80px 20px;
-
 	&__picture {
 		display: block;
 		margin: 0 auto 40px;
@@ -38,20 +36,38 @@
 		}
 	}
 
+	.topper-desktop-wave {
+		position: absolute;
+		right: 23%;
+		top: 0;
+		z-index: 0;
+
+		@include mobile {
+			display: none;
+		}
+	}
+
 	// Section "About"
 
 	#about {
+		position: relative;
 		display: grid;
 		grid-template: min(150px);
 		grid-template-areas:
 			"logo empty"
 			"desc contacts";
 		grid-template-columns: 3fr 1fr;
+		margin: 0 150px 180px;
+		padding-top: 100px;
 
 		.logo {
 			@include mobile {
-				margin-bottom: 11px;
+				margin-bottom: 10px;
 				width: 80px;
+			}
+
+			@include desktop {
+				margin-bottom: 15px;
 			}
 		}
 
@@ -60,65 +76,142 @@
 			font-weight: 700;
 
 			@include mobile {
+				font-size: 28px;
 				line-height: 39px;
+			}
+
+			@include desktop {
+				margin-bottom: 0.8em;
+				font-size: 2.57rem;
+				line-height: 140%;
 			}
 		}
 
 		.description {
-			max-width: 675px;
+			max-width: 40em;
 			line-height: 20px;
+
+			@include mobile {
+				max-width: 675px;
+			}
 		}
 
 		address {
 			font-style: normal;
 		}
 
-		@include mobile {
+		.comunication {
 			display: flex;
-			flex-direction: column;
-			margin-bottom: 40px;
-		}
-	}
+			flex-grow: 1;
+			justify-content: center;
 
-	.comunication {
-		display: flex;
-		flex-grow: 1;
-		justify-content: center;
+			.mail,
+			.tel,
+			address {
+				display: block;
+				margin-bottom: 10px;
+				line-height: 20px;
+				color: $color-black;
+			}
 
-		.mail,
-		.tel,
-		address {
-			display: block;
-			margin-bottom: 10px;
-			line-height: 20px;
-			color: $color-black;
-		}
+			@include mobile {
+				justify-content: flex-start;
+				margin-top: 20px;
+			}
 
-		@include mobile {
-			justify-content: flex-start;
-			margin-top: 20px;
-		}
-	}
-
-	.social {
-		display: flex;
-		margin-top: 15px;
-
-		a.social-link {
-			&:not(:first-child) {
-				margin-left: 20px;
+			@include desktop {
+				justify-content: flex-start;
 			}
 		}
 
-		svg {
-			width: 25px;
-			height: 25px;
+		.contacts {
+			@include desktop {
+				margin: 1.75em 0 0 7.8em;
+			}
+		}
+
+		.social {
+			display: flex;
+			margin-top: 15px;
+
+			a.social-link {
+				&:not(:first-child) {
+					margin-left: 20px;
+				}
+			}
+
+			svg {
+				width: 25px;
+				height: 25px;
+			}
+		}
+
+		.top-wave-separator {
+			display: none;
+
+			@include mobile {
+				position: absolute;
+				left: 0;
+				bottom: -68px;
+				z-index: 0;
+				display: block;
+				width: 100%;
+			}
+		}
+
+		.central-wave-separator {
+			position: absolute;
+			left: -5px;
+			bottom: -51%;
+
+			@include mobile {
+				display: none;
+			}
+		}
+
+		@include mobile {
+			display: flex;
+			flex-direction: column;
+			margin: 0 0 21px;
+			padding: 0 1.43rem;
+		}
+
+		@include desktop {
+			grid-template-columns: 2fr 1fr;
 		}
 	}
 
-	// Section "Experience"
+	.experience {
+		// display: grid;
+		// grid-template: "560px 310px 270px";
+		display: flex;
+		margin-bottom: 188px;
+		padding: 0 150px;
 
-	#experience {
+		@include mobile {
+			flex-direction: column;
+			margin-bottom: 0;
+			padding: 0;
+		}
+	}
+
+	// Section "Work Places"
+
+	#work-places {
+		width: 560px;
+
+		h2 {
+			margin-bottom: 30px;
+			font-weight: 700;
+			font-size: 24px;
+			line-height: 29px;
+
+			@include mobile {
+				margin-bottom: 17px;
+				font-size: 20px;
+			}
+		}
+
 		.job-list {
 			@include mobile {
 				margin-bottom: 40px;
@@ -127,7 +220,11 @@
 
 		.job-item {
 			&:not(:last-child) {
-				margin-bottom: 60.5px;
+				margin-bottom: 60px;
+
+				@include mobile {
+					margin-bottom: 59px;
+				}
 			}
 		}
 
@@ -142,9 +239,13 @@
 
 			.title {
 				display: inline-block;
-				min-width: 109px;
+				min-width: 100px;
 				font-weight: 700;
 				line-height: 17px;
+
+				@include mobile {
+					min-width: 109px;
+				}
 			}
 
 			.icon {
@@ -187,56 +288,118 @@
 
 		/* !!! First description in design has line-height: 17px!!! */
 		.description {
-			margin-bottom: 3px;
+			margin-bottom: 2px;
 			line-height: 20px;
+
+			@include mobile {
+				margin-bottom: 4px;
+			}
+		}
+
+		.job-item:nth-child(1) .description {
+			line-height: 17px;
 		}
 
 		.links {
 			line-height: 17px;
 
 			a {
+				display: inline-block;
+				border-bottom: 1px solid;
 				line-height: 17px;
 				text-decoration: none;
 			}
 
+			/* !!! В мобильной версии подчёркивание имеет только одна ссылка!!! */
 			div:not(:last-child) a {
-				display: inline-block;
 				margin-bottom: 2px;
-				border-bottom: 1px solid;
+
+				// border-bottom: 1px solid;
 			}
+		}
+
+		@include mobile {
+			padding: 0 1.43rem;
+			width: 100%;
 		}
 	}
 
 	.fling-guy-box {
+		position: relative;
 		display: flex;
 		justify-content: center;
+		width: 310px;
+
+		.guy-wrap {
+			position: absolute;
+			top: 0;
+			padding-top: 20px;
+			height: 100%;
+
+			@include mobile {
+				position: relative;
+				padding-top: 0;
+			}
+		}
 
 		.guy {
+			position: sticky;
+			top: 0;
+			display: inline-block;
+			width: 500px;
+			height: auto;
+
 			@include mobile {
-				margin-bottom: 40px;
+				position: relative;
+				margin-bottom: 23px;
+				width: 200px;
 			}
+		}
+
+		// width: 19%;
+
+		@include mobile {
+			padding: 0 1.43rem;
+			width: 100%;
 		}
 	}
 
 	// Section "Education"
 
 	#education {
+		position: relative;
+		width: 270px;
+
 		h2 {
-			margin-bottom: 16px;
+			margin-bottom: 32px;
+			font-weight: 700;
+			font-size: 24px;
+			line-height: 29px;
+			text-align: center;
+
+			@include mobile {
+				margin-bottom: 16px;
+				font-size: 20px;
+				line-height: 24px;
+				text-align: left;
+			}
 		}
 
 		.places-list {
 			display: grid;
-			grid-column-gap: 20px;
+			grid-column-gap: 21px;
 			grid-template-columns: 1fr;
+			padding: 0 39.5px;
 
 			@include mobile {
 				grid-template-columns: 1fr 1fr;
+				padding: 0;
 			}
 		}
 
 		.places-item {
-			margin-bottom: 20px;
+			margin-bottom: 30px;
+			padding: 0 20px;
 			text-align: center;
 
 			.icon {
@@ -249,7 +412,7 @@
 
 			.title,
 			.description {
-				line-height: 20px;
+				line-height: 19.8px;
 			}
 
 			.icon,
@@ -257,20 +420,84 @@
 			.description p:not(:last-child) {
 				margin-bottom: 5px;
 			}
+
+			@include mobile {
+				margin-bottom: 20px;
+				padding: 0;
+			}
+		}
+
+		.bottom-wave-separator {
+			display: none;
+
+			@include mobile {
+				position: absolute;
+				left: 0;
+				bottom: -92px;
+				z-index: 0;
+				display: block;
+				width: 100%;
+			}
+		}
+
+		// width: 25%;
+		// margin: 0 0 0 40px;
+		// margin-left: 40px;
+
+		@include mobile {
+			margin-bottom: 1px;
+			padding: 0 1.43rem;
+			width: 100%;
 		}
 	}
 
 	// Section "Skills"
 
 	section#skills {
-		margin-bottom: 40px;
+		position: relative;
+		margin: 0 150px 180px;
+
+		.bottom-desktop-wave-separator {
+			position: absolute;
+			left: 0;
+			bottom: -24px;
+			display: block;
+
+			@include mobile {
+				display: none;
+			}
+		}
 
 		h2 {
-			margin-bottom: 20px;
+			margin-bottom: 30px;
+			font-weight: 700;
+			font-size: 24px;
+			line-height: 29px;
+
+			@include mobile {
+				margin-bottom: 20px;
+				font-size: 22px;
+				line-height: 26px;
+			}
+		}
+
+		.skills-list {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+
+			@include mobile {
+				flex-direction: column;
+			}
 		}
 
 		.skills-item {
 			margin-bottom: 20px;
+			width: 270px;
+
+			@include mobile {
+				width: 100%;
+			}
 		}
 
 		.title {
@@ -282,17 +509,26 @@
 		.description {
 			line-height: 20px;
 		}
+
+		@include mobile {
+			margin: 0 0 20px;
+			padding: 0 1.43rem;
+		}
 	}
 
-	.arms {
-		margin-bottom: 40px;
-	}
+	.arm-wrap {
+		display: flex;
 
-	@include desktop {
-		padding: 100px 20px;
+		.arms-picture {
+			margin: 0 auto 50px;
+
+			@include mobile {
+				margin-bottom: 40px;
+			}
+		}
 	}
 
 	@include mobile {
-		padding: 20px;
+		padding: 1.43rem 0 0;
 	}
 }

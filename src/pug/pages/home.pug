@@ -32,6 +32,12 @@ main.home
 	//- 	}
 	//- ]).home__picture.home__picture--2#bye
 
+	//- +lazyPicture({
+	//- 		src: `${baseDir}images/Desktop-Topper-Separator.svg`,
+	//- 		alt: 'Topper Desktop Wave',
+	//- 	}).topper-desktop-wave
+	img.topper-desktop-wave(src="/images/Desktop-Topper-Separator.svg" alt="Topper Desktop Wave")
+
 	section#about
 		.logo-wrap
 			+lazyPicture({
@@ -70,55 +76,70 @@ main.home
 					a.social-link(href="https://t.me" target="_blank")
 						+svg("tg")
 
-	.top-wave-separator
+		+lazyPicture({
+				src: `${baseDir}images/SeparatorTop.svg`,
+				alt: 'Top Separator',
+			}).top-wave-separator
 
-	section#experience
-		h2 Опыт работы
+		img.central-wave-separator(src="/images/Desktop-Wave-Center.svg" alt="Central wave separator")
 
-		.job-list
-			each item in homepage.experience
-				.job-item
-					.date
-						!= item.date
-					.job-head
-						span.title
-							!= item.title
-						if item.icon.url
-							img.icon(src=item.icon.url alt=item.icon.alt)
-					.company
-						if item.company.logo
-							img(src=item.company.logo alt=item.company.logo.alt)
-						.info
-							if item.company.name
-								span.name
-									!= item.company.name
-							span.description
-								!= item.company.description
-					.description
-						!= item.description
-					.links
-						each link in item.links
-							div
-								a(href=link.url)
-									!= link.text
+	.experience
+		section#work-places
+			h2 Опыт работы
+
+			.job-list
+				each item in homepage.experience
+					.job-item
+						.date
+							!= item.date
+						.job-head
+							span.title
+								!= item.title
+							if item.icon.url
+								img.icon(src=item.icon.url alt=item.icon.alt)
+						.company
+							if item.company.logo
+								img(src=item.company.logo alt=item.company.logo.alt)
+							.info
+								if item.company.name
+									span.name
+										!= item.company.name
+								span.description
+									!= item.company.description
+						.description
+							!= item.description
+						.links
+							each link in item.links
+								if link.url
+									div
+										a(href=link.url)
+											!= link.text
 
 		.fling-guy-box
-			img.guy(src="/images/guy.png" alt="Flying guy")
+			.guy-wrap
+				+lazyPicture({
+						src: `${baseDir}images/Guy/guy.png`,
+						alt: 'Flying guy',
+					}).guy
 
-	section#education
-		h2 Образование
+		section#education
+			h2 Образование
 
-		.places-list
-			each item in homepage.education
-				.places-item
-					if item.icon.url
-						img.icon(src=item.icon.url alt=item.icon.alt)
-					.title
-						!= item.title
-					.description
-						!= item.description
+			.places-list
+				each item in homepage.education
+					.places-item
+						if item.icon.url
+							img.icon(src=item.icon.url alt=item.icon.alt)
+						.title
+							!= item.title
+						.description
+							!= item.description
+
+			img.bottom-wave-separator(src="/images/SeparatorBottom.svg" alt="Bottom Separator")
 
 	section#skills
+		img.bottom-desktop-wave-separator(src="/images/Desktop-Wave-Bottom.svg" alt="Bottom Separator")
+
 		h2 Навыки
 
 		.skills-list
@@ -129,7 +150,8 @@ main.home
 					.description
 						!= item.description
 
-	+lazyPicture({
-		src: `${baseDir}images/arms.png`,
-		alt: 'Heart arms',
-	}).logo
+	.arm-wrap
+		+lazyPicture({
+			src: `${baseDir}images/Arms/arms.png`,
+			alt: 'Heart arms',
+		}).arms-picture

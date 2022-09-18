@@ -1,13 +1,24 @@
 .header {
-	position: fixed;
-	right: 20px;
+	position: absolute;
+	right: 150px;
 	top: 100px;
 	z-index: 2100;
 	display: flex;
 	align-items: center;
+	padding-right: 3px;
 	background-color: transparent;
 
-	// background-color: $color-white;
+	&__link {
+		color: $color-black;
+
+		&:not(:first-child) {
+			margin-left: 32px;
+
+			@include mobile {
+				margin-left: 15px;
+			}
+		}
+	}
 
 	&__menu {
 		position: relative;
@@ -20,20 +31,15 @@
 		line-height: 21px;
 	}
 
-	&__link {
-		color: $color-black;
-
-		&:not(:first-child) {
-			margin-left: 15px;
-		}
+	@include mobile {
+		position: fixed;
+		right: 20px;
+		top: 30px;
 	}
 }
 
 @include mobile {
 	.header {
-		left: 0;
-		top: 30px;
-
 		&__menu {
 			position: fixed;
 			left: 0;
