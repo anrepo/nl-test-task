@@ -354,9 +354,12 @@
 		.guy {
 			position: sticky;
 			top: 0;
+			z-index: 1;
 			display: inline-block;
-			width: 500px;
+			margin-left: calc(161% - 170%);
+			width: 161%;
 			height: auto;
+			max-width: 500px;
 
 			@include mobile {
 				position: relative;
