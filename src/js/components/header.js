@@ -7,7 +7,7 @@ function openMenu() {
 		helpers.lockScroll(true, helpers.$header.find('.header__menu'), 'header');
 
 		helpers.$header.addClass('is-menu-opened');
-		$('.header__menu').removeClass('is-hidden');
+		// $('.header__menu').removeClass('is-hidden');
 
 		setImmediate(() => {
 			helpers.$body.css('padding-right', `${helpers.getScrollbarWidth()}px`);
@@ -36,7 +36,8 @@ function closeMenu() {
 		$('.header__menu').removeClass('is-active');
 
 		setTimeout(() => {
-			$('.header__menu').addClass('is-hidden');
+			// $('.header__menu').addClass('is-hidden');
+			$('.header__menu').removeClass('is-hidden');
 			$('.js-burger').removeClass('is-disabled').attr('disabled', false);
 
 			resolve();
@@ -77,6 +78,11 @@ function init() {
 				$('.js-burger').removeClass('is-active');
 			}
 		});
+
+	$('.header__link').click(function () {
+		$('.header__link').removeClass('is-active');
+		$(this).addClass('is-active');
+	});
 }
 
 function destroy() {

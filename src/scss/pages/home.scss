@@ -60,14 +60,22 @@
 		margin: 0 150px 180px;
 		padding-top: 100px;
 
-		.logo {
-			@include mobile {
-				margin-bottom: 10px;
-				width: 80px;
+		.logo-wrap {
+			position: relative;
+			margin-bottom: 15px;
+			height: 150px;
+
+			picture {
+				height: 100%;
 			}
 
-			@include desktop {
-				margin-bottom: 15px;
+			picture img {
+				height: 100%;
+			}
+
+			@include mobile {
+				margin-bottom: 10px;
+				height: 80px;
 			}
 		}
 
@@ -163,6 +171,7 @@
 			position: absolute;
 			left: -5px;
 			bottom: -51%;
+			min-width: 1140px;
 
 			@include mobile {
 				display: none;
@@ -462,6 +471,7 @@
 			left: 0;
 			bottom: -24px;
 			display: block;
+			min-width: 1140px;
 
 			@include mobile {
 				display: none;
