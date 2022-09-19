@@ -1,0 +1,92 @@
+.button-to-top {
+	position: fixed;
+	right: 24px;
+	bottom: 88px;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	@include mobile {
+		right: 20px;
+		bottom: 97px;
+	}
+}
+
+.progress-circle {
+	position: relative;
+	display: inline-block;
+	width: 51px;
+	height: 51px;
+	min-width: 51px;
+	min-height: 51px;
+	transition: transform 0.2s ease-in-out;
+	transition: transform 0.2s ease-in-out;
+	transition: transform 0.2s ease-in-out;
+	transition: transform 0.2s ease-in-out;
+	transition: transform 0.2s ease-in-out;
+
+	@include mobile {
+		width: 30px;
+		height: 30px;
+		min-width: 30px;
+		min-height: 30px;
+	}
+}
+
+span.progress-circle__text,
+img.toTopArrow {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid transparent;
+	border-radius: 50%;
+	text-align: center;
+	color: $color-black;
+	background-color: transparent;
+	transform: translate(-50%, -50%);
+}
+
+span.progress-circle__text {
+	$circle-size: 86%;
+
+	width: $circle-size;
+	height: $circle-size;
+	font-weight: 700;
+	font-size: 1.2rem;
+	color: $color-black;
+
+	@include mobile {
+		font-size: 0.75rem;
+	}
+}
+
+img.toTopArrow {
+	cursor: pointer;
+
+	&:hover,
+	&:active {
+		opacity: 0.4;
+	}
+
+	@include mobile {
+		width: 14px;
+	}
+}
+
+svg.progress-bar {
+	vertical-align: middle;
+
+	.progress {
+		fill: $background-main;
+		stroke: $color-red;
+		stroke-linecap: round;
+		stroke-width: 5px;
+		transform: rotate(-90deg);
+		transform-origin: center;
+		transition: stroke-dashoffset 0.2s linear;
+	}
+}

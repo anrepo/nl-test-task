@@ -8,6 +8,13 @@
 	opacity: 0;
 }
 
+.hidden {
+	position: absolute;
+	z-index: 0;
+	opacity: 0;
+	visibility: hidden;
+}
+
 .for-desktop {
 	@include devices {
 		// stylelint-disable-next-line declaration-no-important

@@ -540,6 +540,7 @@
 
 		.arms-picture {
 			margin: 0 auto 50px;
+			min-height: 288px;
 
 			@include mobile {
 				margin-bottom: 40px;
