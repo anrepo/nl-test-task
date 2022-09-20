@@ -53,7 +53,7 @@ main.home
 				br
 				| Front-end разработчик
 
-			p.description
+			p.description.slideUp
 				| Как разработчик, я высоко ценю способность воплотить видение дизайнера в жизнь,
 				| что считаю очень полезным для бизнеса. Я получаю огромное удовлетворение,
 				| наблюдая за работой от идеи до дизайна, особенно когда она появляется в руках
@@ -61,12 +61,12 @@ main.home
 				| наиболее ценными цифровыми ресурсами будущего.
 
 		.comunication
-			.contacts
-				a.mail(href="mailto:andrey.polenok@gmail.com") mail@gmail.com
+			.contacts.sildeRight
+				a.mail(href="mailto:andrey.polenok@gmail.com") mailto:andrey.polenok@gmail.com
 
-				a.tel(href="tel:+79152068407") +7 (999) 000-00-00
+				a.tel(href="tel:+79152068407") +7 (915) 206 84-07
 
-				address г. Иннополис
+				address г. Москва
 
 				.social
 					a.social-link(href="https://facebook.com" target="_blank")
@@ -87,7 +87,7 @@ main.home
 		section#work-places
 			h2 Опыт работы
 
-			.job-list
+			.job-list.slideLeft
 				each item in homepage.experience
 					.job-item
 						.date
@@ -125,7 +125,7 @@ main.home
 		section#education
 			h2 Образование
 
-			.places-list
+			.places-list.sildeRight
 				each item in homepage.education
 					.places-item
 						if item.icon.url
@@ -142,7 +142,7 @@ main.home
 
 		h2 Навыки
 
-		.skills-list
+		.skills-list.bounceOut
 			each item in homepage.skills
 				.skills-item
 					.title

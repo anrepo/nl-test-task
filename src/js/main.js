@@ -9,6 +9,7 @@ import lazyLoading from './modules/lazyLoading';
 import scrollToAnchor from './modules/scrollToAnchor';
 import scrollProgress from './modules/scrollProgress';
 import backToTop from './modules/backToTop';
+import './modules/animation';
 
 ieFix();
 vhFix();

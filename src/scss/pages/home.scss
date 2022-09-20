@@ -461,6 +461,7 @@
 		// margin-left: 40px;
 
 		@include mobile {
+			overflow: hidden;
 			margin-bottom: 1px;
 			padding: 0 1.43rem;
 			width: 100%;
