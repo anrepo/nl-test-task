@@ -98,6 +98,8 @@
 		.description {
 			max-width: 40em;
 			line-height: 20px;
+			opacity: 0;
+			transform: translateY(200px);
 
 			@include mobile {
 				max-width: 675px;
@@ -133,6 +135,9 @@
 		}
 
 		.contacts {
+			opacity: 0;
+			transform: translateX(100px);
+
 			@include desktop {
 				margin: 1.75em 0 0 7.8em;
 			}

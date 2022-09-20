@@ -8,4 +8,22 @@
 	background-color: $background-main;
 }
 
-.rocket-man {}
+.preloader-wrap {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+}
+
+.rocket-man {
+	position: absolute;
+	width: 320px;
+	transition: all 1s;
+}
+
+.preloader-progress {
+	font-family: $font-primary;
+	font-size: 2rem;
+}

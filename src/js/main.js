@@ -10,7 +10,6 @@ import scrollToAnchor from './modules/scrollToAnchor';
 import scrollProgress from './modules/scrollProgress';
 import backToTop from './modules/backToTop';
 import './modules/animation';
-import './modules/preloader';
 
 ieFix();
 vhFix();
