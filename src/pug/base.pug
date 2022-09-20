@@ -279,6 +279,7 @@ html(class=html.classList)&attributes(html.attrs)
 			link(rel="stylesheet" href!=`${baseDir}css/main.css?v=${Date.now()}`)
 		block head-end
 	body(class=body.classList)&attributes(body.attrs)
+		include ./elements/preloader
 		block body-start
 		block content
 		block scripts
