@@ -23,30 +23,30 @@ gsap.fromTo('.contacts.sildeRight', {
 	duration: 1,
 });
 
-gsap.fromTo('.job-list.slideLeft', {
-	x: -200,
+gsap.fromTo('.job-list.slideTop', {
+	y: 200,
 	opacity: 0,
 }, {
-	x: 0,
+	y: 0,
 	opacity: 1,
 	duration: 1,
 	scrollTrigger: {
-		trigger: '.job-list.slideLeft',
-		start: '100px 80%',
+		trigger: '.job-list.slideTop',
+		start: '-200px 80%',
 		markers: false,
 	},
 });
 
-gsap.fromTo('.places-list.sildeRight', {
-	x: 200,
+gsap.fromTo('.places-list.sildeTop', {
+	y: 200,
 	opacity: 0,
 }, {
-	x: 0,
+	y: 0,
 	opacity: 1,
 	duration: 1,
 	scrollTrigger: {
-		trigger: '.places-list.sildeRight',
-		start: '100px 80%',
+		trigger: '.places-list.sildeTop',
+		start: '-200px 80%',
 		markers: false,
 	},
 });
