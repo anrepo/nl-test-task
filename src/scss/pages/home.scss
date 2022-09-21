@@ -65,6 +65,10 @@
 			margin-bottom: 15px;
 			height: 150px;
 
+			.logo {
+				height: 100%;
+			}
+
 			picture {
 				height: 100%;
 			}
@@ -193,6 +197,10 @@
 			padding: 0 1.43rem;
 		}
 
+		@include tablet {
+			margin: 0 80px 180px;
+		}
+
 		@include desktop {
 			grid-template-columns: 2fr 1fr;
 		}
@@ -202,13 +210,19 @@
 		// display: grid;
 		// grid-template: "560px 310px 270px";
 		display: flex;
-		margin-bottom: 188px;
-		padding: 0 150px;
+
+		// margin-bottom: 188px;
+		margin: 0 150px 188px;
 
 		@include mobile {
 			flex-direction: column;
-			margin-bottom: 0;
-			padding: 0;
+
+			// margin-bottom: 0;
+			margin: 0 20px;
+		}
+
+		@include tablet {
+			margin: 0 80px 180px;
 		}
 	}
 
@@ -337,7 +351,7 @@
 		}
 
 		@include mobile {
-			padding: 0 1.43rem;
+			// padding: 0 1.43rem;
 			width: 100%;
 		}
 	}
@@ -462,14 +476,9 @@
 			}
 		}
 
-		// width: 25%;
-		// margin: 0 0 0 40px;
-		// margin-left: 40px;
-
 		@include mobile {
 			overflow: hidden;
 			margin-bottom: 1px;
-			padding: 0 1.43rem;
 			width: 100%;
 		}
 	}
@@ -537,8 +546,11 @@
 		}
 
 		@include mobile {
-			margin: 0 0 20px;
-			padding: 0 1.43rem;
+			margin: 0 20px 20px;
+		}
+
+		@include tablet {
+			margin: 0 80px 100px;
 		}
 	}
 

@@ -46,6 +46,10 @@
 		top: 30px;
 		margin-right: 20px;
 	}
+
+	@include tablet {
+		margin-right: 80px;
+	}
 }
 
 @include mobile {
