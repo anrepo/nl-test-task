@@ -22,7 +22,7 @@ function onImageLoad() {
 
 	// console.log(d);
 
-	rocketMan.style.left = `${d / 100 * preloaderProgress.toFixed(0)}px`;
+	rocketMan.style.left = `${d / 100 * preloaderProgress.toFixed(0) + 300}px`;
 	rocketMan.style.bottom = `${d / 100 * preloaderProgress.toFixed(0)}px`;
 
 	// console.log(loadImage);

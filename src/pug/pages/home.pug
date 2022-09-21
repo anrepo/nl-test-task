@@ -59,18 +59,18 @@ main.home
 
 		.comunication
 			.contacts.sildeRight
-				a.mail(href="mailto:andrey.polenok@gmail.com") mailto:andrey.polenok@gmail.com
+				a.mail(href="mailto:andrey.polenok@gmail.com") andrey.polenok@gmail.com
 
 				a.tel(href="tel:+79152068407") +7 (915) 206 84-07
 
 				address г. Москва
 
 				.social
-					a.social-link(href="https://facebook.com" target="_blank")
+					.social-link.share-btn(data-social="fb")
 						+svg("fb")
-					a.social-link(href="https://vk.com" target="_blank")
+					.social-link.share-btn(data-social="vk")
 						+svg("vk")
-					a.social-link(href="https://t.me" target="_blank")
+					.social-link.share-btn(data-social="tg")
 						+svg("tg")
 
 		+lazyPicture({

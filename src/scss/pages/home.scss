@@ -151,9 +151,15 @@
 			display: flex;
 			margin-top: 15px;
 
-			a.social-link {
+			.social-link {
+				cursor: pointer;
+
 				&:not(:first-child) {
 					margin-left: 20px;
+				}
+
+				&:hover {
+					opacity: 0.4;
 				}
 			}
 
