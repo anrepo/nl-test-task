@@ -9,6 +9,8 @@ function openMenu() {
 		helpers.$header.addClass('is-menu-opened');
 		// $('.header__menu').removeClass('is-hidden');
 
+		$('html').css('overflow', 'hidden');
+
 		setImmediate(() => {
 			helpers.$body.css('padding-right', `${helpers.getScrollbarWidth()}px`);
 			helpers.$header.css('right', `${helpers.getScrollbarWidth()}px`);
@@ -34,6 +36,8 @@ function closeMenu() {
 		helpers.$header.removeClass('is-menu-opened');
 
 		$('.header__menu').removeClass('is-active');
+
+		$('html').css('overflow', 'auto');
 
 		setTimeout(() => {
 			// $('.header__menu').addClass('is-hidden');
