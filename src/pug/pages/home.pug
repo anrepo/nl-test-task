@@ -46,9 +46,9 @@ main.home
 
 		div
 			h1
-				| Андрей,
-				br
-				| Front-end разработчик
+				span.name Андрей
+				| , <br>
+				span.position Front-end разработчик
 
 			p.description.slideUp
 				| Как разработчик, я высоко ценю способность воплотить видение дизайнера в жизнь,
@@ -96,7 +96,7 @@ main.home
 								img.icon(src=item.icon.url alt=item.icon.alt)
 						.company
 							if item.company.logo
-								img(src=item.company.logo alt=item.company.logo.alt)
+								img(src=item.company.logo alt=item.icon.alt)
 							.info
 								if item.company.name
 									span.name
@@ -154,3 +154,4 @@ main.home
 		}).arms-picture
 
 	include ../elements/toTopButton
+	include ../components/share.pug

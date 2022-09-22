@@ -1,0 +1,36 @@
+.hidden-box {
+	position: relative;
+	overflow: hidden;
+}
+
+.share-box {
+	position: absolute;
+	left: 110%;
+	width: 968px;
+	min-height: 504px;
+	background-color: $background-main;
+}
+
+.share {
+	display: grid;
+	grid-template-columns: 66% 1fr;
+	padding: 50px;
+
+	.share-head {
+		display: inline-block;
+		margin-bottom: 30px;
+		font-weight: 700;
+		font-size: 36px;
+		line-height: 50px;
+	}
+
+	.description {
+		line-height: 20px;
+	}
+
+	.share-picture {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+	}
+}
