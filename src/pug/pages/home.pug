@@ -1,4 +1,4 @@
-main.home
+main.home(data-scroll-container)
 	//- +lazyPicture({
 	//- 	src: `${baseDir}images/mem.jpg`,
 	//- 	alt: 'Мемчик',
@@ -36,9 +36,11 @@ main.home
 	//- 		src: `${baseDir}images/Desktop-Topper-Separator.svg`,
 	//- 		alt: 'Topper Desktop Wave',
 	//- 	}).topper-desktop-wave
-	img.topper-desktop-wave(src="/images/Desktop-Topper-Separator.svg" alt="Topper Desktop Wave")
 
-	section#about
+	section#about(data-scroll-section)
+		include ../components/header
+		img.topper-desktop-wave(src="/images/Desktop-Topper-Separator.svg" alt="Topper Desktop Wave")
+
 		.logo-wrap
 			img.logo(src="/images/Logo.svg" alt="Логотип")
 
@@ -47,6 +49,7 @@ main.home
 		div
 			h1
 				span.name Андрей
+				//- input.name-editor(type="text", name="" value="Андрей")
 				| , <br>
 				span.position Front-end разработчик
 
@@ -80,7 +83,7 @@ main.home
 
 		img.central-wave-separator(src="/images/Desktop-Wave-Center.svg" alt="Central wave separator")
 
-	.experience
+	.experience(data-scroll-section)
 		section#work-places
 			h2 Опыт работы
 
@@ -134,7 +137,7 @@ main.home
 
 			img.bottom-wave-separator(src="/images/SeparatorBottom.svg" alt="Bottom Separator")
 
-	section#skills
+	section#skills(data-scroll-section)
 		img.bottom-desktop-wave-separator(src="/images/Desktop-Wave-Bottom.svg" alt="Bottom Separator")
 
 		h2 Навыки
@@ -147,11 +150,10 @@ main.home
 					.description
 						!= item.description
 
-	.arm-wrap
+	.arm-wrap(data-scroll-section)
 		+lazyPicture({
 			src: `${baseDir}images/Arms/arms.png`,
 			alt: 'Heart arms',
 		}).arms-picture
 
-	include ../elements/toTopButton
 	include ../components/share.pug

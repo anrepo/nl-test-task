@@ -1,3 +1,5 @@
+import helpers from '../helpers';
+
 let progressCircle = (() => {
 	class Circle {
 		constructor(element) {
@@ -20,8 +22,11 @@ let progressCircle = (() => {
 	}
 
 	function getVerticalScrollPercentage() {
-		return (document.body.scrollTop || document.documentElement.scrollTop) /
-            (document.documentElement.scrollHeight - document.documentElement.clientHeight) * 100;
+		let locoScrollBar = $('.c-scrollbar');
+		let locoScrollThumb = $('.c-scrollbar_thumb');
+		let progressScroll = +locoScrollThumb[0].style.transform.split(', ')[13];
+
+		return progressScroll / (locoScrollBar.height() - locoScrollThumb.height()) * 100;
 	}
 
 	function setProgress(circleObj) {
@@ -46,9 +51,9 @@ let progressCircle = (() => {
 		let circle = new Circle(itemProgress);
 		setProgress(circle);
 
-		document.onscroll = () => {
-			setProgress(circle);
-		};
+		helpers.locoScroll.on('scroll', () => {
+			setProgress(circle); // 😎
+		});
 	}
 
 	return {

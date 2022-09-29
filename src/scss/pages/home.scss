@@ -197,6 +197,7 @@
 		}
 
 		@include mobile {
+			z-index: 5;
 			display: flex;
 			flex-direction: column;
 			margin: 0 0 21px;

@@ -11,6 +11,8 @@ function openMenu() {
 
 		$('html').css('overflow', 'hidden');
 
+		helpers.locoScroll.stop();
+
 		setImmediate(() => {
 			helpers.$body.css('padding-right', `${helpers.getScrollbarWidth()}px`);
 			helpers.$header.css('right', `${helpers.getScrollbarWidth()}px`);
@@ -38,6 +40,8 @@ function closeMenu() {
 		$('.header__menu').removeClass('is-active');
 
 		$('html').css('overflow', 'auto');
+
+		helpers.locoScroll.start();
 
 		setTimeout(() => {
 			// $('.header__menu').addClass('is-hidden');

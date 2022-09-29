@@ -9,7 +9,8 @@ const init = () => {
 	let lastScrollTop = 0;
 
 	helpers.$document.on('click.backTop', `${className}`, () => {
-		helpers.scrollTo($('body'));
+		// helpers.scrollTo($('body'));
+		helpers.locoScroll.scrollTo('top');
 	});
 
 	helpers.$window.on('scroll.backTop', () => {

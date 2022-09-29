@@ -5,7 +5,7 @@ import helpers from '../helpers';
 * Модуль "Плавный переход к якорю"
 */
 const init = () => {
-	helpers.$document.on('click.anchor', '.js-to-anchor', (e) => {
+	$('.js-to-anchor').on('click', (e) => {
 		e.preventDefault();
 		e.stopPropagation();
 
@@ -15,13 +15,18 @@ const init = () => {
 
 		header.closeMenu().then(() => {
 			$('.js-burger').removeClass('is-active');
-			helpers.scrollTo($(id), speed, offset);
+			// helpers.scrollTo($(id), speed, offset);
+
+			helpers.locoScroll.scrollTo(document.querySelector(`${id}`), {
+				speed,
+				offset,
+			});
 		});
 	});
 };
 
 const destroy = () => {
-	helpers.$document.off('.anchor');
+	helpers.$document.off('.js-to-anchor');
 };
 
 export default {

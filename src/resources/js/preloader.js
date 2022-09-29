@@ -29,7 +29,7 @@ function onImageLoad() {
 
 	if (loadImage === imgLength || preloaderProgress >= 100) {
 		document.querySelector('.preloader-mask').classList.add('hidden');
-		document.documentElement.style.overflow = 'auto';
+		document.documentElement.style.overflow = '';
 	}
 }
 

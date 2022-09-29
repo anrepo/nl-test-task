@@ -1,4 +1,5 @@
 import * as bodyScrollLock from 'body-scroll-lock';
+import locomotive from './modules/locomotive';
 
 let vars = {};
 
@@ -10,6 +11,11 @@ vars.isMobile = () => innerWidth <= 1024;
 vars.isIE = () => vars.$html.hasClass('is-browser-ie');
 vars.isIOS = () => vars.$html.hasClass('is-os-ios');
 vars.winWidth = window.innerWidth;
+
+/**
+ * Инициализация Locomotive Scroll
+ */
+vars.locoScroll = locomotive.init();
 
 /**
 * Очистить текст от спецсимволов
