@@ -85,9 +85,10 @@ main.home(data-scroll-container)
 
 	.experience(data-scroll-section)
 		section#work-places
-			h2 Опыт работы
+			.work-places-content(data-scroll="" data-scroll-offset="5%, 0")
+				h2 Опыт работы
 
-			.job-list.slideTop
+				.job-list
 				each item in homepage.experience
 					.job-item
 						.date
@@ -115,17 +116,17 @@ main.home(data-scroll-container)
 										a(href=link.url)
 											!= link.text
 
-		.fling-guy-box
-			.guy-wrap
+		.fling-guy-box(data-scroll="" data-scroll-offset="5%, 0")
+			.guy-wrap#fling-box
 				+lazyPicture({
 						src: `${baseDir}images/Guy/guy.png`,
 						alt: 'Flying guy',
-					}).guy
+					}).guy(data-scroll="" data-scroll-sticky="" data-scroll-target="#fling-box" data-scroll-offset="-25%, 35%")
 
-		section#education
+		section#education(data-scroll="" data-scroll-offset="5%, 0")
 			h2 Образование
 
-			.places-list.sildeTop
+			.places-list
 				each item in homepage.education
 					.places-item
 						if item.icon.url
@@ -140,20 +141,21 @@ main.home(data-scroll-container)
 	section#skills(data-scroll-section)
 		img.bottom-desktop-wave-separator(src="/images/Desktop-Wave-Bottom.svg" alt="Bottom Separator")
 
-		h2 Навыки
+		.skills-content(data-scroll)
+			h2 Навыки
 
-		.skills-list.bounceOut
-			each item in homepage.skills
-				.skills-item
-					.title
-						!= item.title
-					.description
-						!= item.description
+			.skills-list
+				each item in homepage.skills
+					.skills-item
+						.title
+							!= item.title
+						.description
+							!= item.description
 
 	.arm-wrap(data-scroll-section)
 		+lazyPicture({
 			src: `${baseDir}images/Arms/arms.png`,
 			alt: 'Heart arms',
-		}).arms-picture
+		}).arms-picture(data-scroll="" data-scroll-speed="1" data-scroll-position="bottom")
 
 	include ../components/share.pug

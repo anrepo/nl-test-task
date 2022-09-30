@@ -39,7 +39,7 @@ function closeMenu() {
 
 		$('.header__menu').removeClass('is-active');
 
-		$('html').css('overflow', 'auto');
+		$('html').css('overflow', '');
 
 		helpers.locoScroll.start();
 

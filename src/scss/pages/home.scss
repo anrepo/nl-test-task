@@ -214,17 +214,11 @@
 	}
 
 	.experience {
-		// display: grid;
-		// grid-template: "560px 310px 270px";
 		display: flex;
-
-		// margin-bottom: 188px;
 		margin: 0 150px 188px;
 
 		@include mobile {
 			flex-direction: column;
-
-			// margin-bottom: 0;
 			margin: 0 20px;
 		}
 
@@ -237,6 +231,10 @@
 
 	#work-places {
 		width: 560px;
+
+		.work-places-content {
+			@include showToTop(200, 1.1, 0, "is-inview");
+		}
 
 		h2 {
 			margin-bottom: 30px;
@@ -364,6 +362,8 @@
 	}
 
 	.fling-guy-box {
+		@include showToTop(200, 1.1, 0.5, "is-inview");
+
 		position: relative;
 		display: flex;
 		justify-content: center;
@@ -373,7 +373,7 @@
 			position: absolute;
 			top: 0;
 			padding-top: 20px;
-			height: 100%;
+			height: 70%;
 
 			@include mobile {
 				position: relative;
@@ -384,7 +384,8 @@
 		.guy {
 			position: sticky;
 			top: 0;
-			z-index: 1;
+			bottom: 0;
+			z-index: 3;
 			display: inline-block;
 			margin-left: calc(161% - 170%);
 			width: 161%;
@@ -395,6 +396,7 @@
 				position: relative;
 				margin-bottom: 23px;
 				width: 200px;
+				min-height: 200px;
 			}
 		}
 
@@ -409,6 +411,8 @@
 	// Section "Education"
 
 	#education {
+		@include showToTop(200, 1.1, 1, "is-inview");
+
 		position: relative;
 		width: 270px;
 
@@ -496,6 +500,10 @@
 		position: relative;
 		margin: 0 150px 180px;
 
+		.skills-content {
+			@include showToTop(150, 1, 0, "is-inview");
+		}
+
 		.bottom-desktop-wave-separator {
 			position: absolute;
 			left: 0;
@@ -568,8 +576,12 @@
 			margin: 0 auto 50px;
 			min-height: 288px;
 
+			// @include showToTop(200, 1, 0, "is-inview");
+
 			@include mobile {
+				margin: 0 auto 50px;
 				margin-bottom: 40px;
+				min-height: 288px;
 			}
 		}
 	}

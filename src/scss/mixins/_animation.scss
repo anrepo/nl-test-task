@@ -1,0 +1,12 @@
+@mixin showToTop($offset, $duration, $delay, $activeClass) {
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(#{$offset}px);
+	transition: all #{$duration}s #{$delay}s ease-in-out;
+
+	&.#{$activeClass} {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
+}
